@@ -1,0 +1,9 @@
+---
+- name: Deploy Docker
+  hosts: all
+  become: true 
+
+  roles:
+#    - { role: install_docker, when: ansible_os_family == 'RedHat'}
+#    - { role: install_docker, when: ansible_os_family == 'Debian'}
+#    - install_docker_ubuntu

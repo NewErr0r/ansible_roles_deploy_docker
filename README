@@ -1,0 +1,8 @@
+Для запуска установки docker и docker-compose на CentOS, раскоментировать струку в файле "playbook_docker.yaml":
+#    - { role: install_docker, when: ansible_os_family == 'RedHat'}
+
+Для запуска установки docker и docker-compose на Debian, раскоментировать струку в файле "playbook_docker.yaml":
+#    - { role: install_docker, when: ansible_os_family == 'Debian}
+
+Для запуска установки docker и docker-compose на Ubuntu, раскоментировать струку в файле "playbook_docker.yaml":
+#    - install_docker_ubuntu

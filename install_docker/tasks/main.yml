@@ -1,0 +1,16 @@
+---
+- name: Isntall docker on CentOS
+  include_tasks: centos_install_docker.yaml
+  when:
+    - ansible_os_family == "RedHat"
+
+- name: Isntall docker on Debian
+  include_tasks: debian_install_docker.yaml
+  when:
+    - ansible_os_family == "Debian"
+
+- name: Isntall docker-compose
+  include_tasks: install_docker-compose.yaml
+
+
+    

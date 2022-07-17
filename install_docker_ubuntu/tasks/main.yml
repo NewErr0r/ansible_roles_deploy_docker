@@ -1,0 +1,26 @@
+---
+- name: Isntall docker on Ubuntu
+  apt:
+    name: "{{ packages_for_add_repo }}"
+    state: latest
+    update_cache: yes
+
+- name: Add docker key
+  apt_key:
+    url: "{{ docker_key }}"
+    state: present
+
+- name: Add docker repo 
+  apt_repository:
+    repo: "{{ docker_repo }}"
+
+- name: Update package and install docker-ce
+  apt: 
+    name: docker-ce
+    state: latest
+    update_cache: yes
+  notify:
+    - Started and Enabled docker
+
+- name: Isntall docker-compose
+  include_tasks: install_docker-compose.yaml

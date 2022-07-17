@@ -1,0 +1,18 @@
+---
+- name: Install packages for docker
+  yum: 
+    name: "{{ centos_packages_docker }}"
+    state: latest 
+
+- name: Add docker repo
+  get_url:
+    url: "{{ docker_repo }}"
+    dest: "{{ path_docker_repo }}"
+  
+- name: Install docker 
+  dnf: 
+    name: "{{ docker_packages }}"
+    state: latest
+  notify:
+    - Statred and Enabled docker 
+

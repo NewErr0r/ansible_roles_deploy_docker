@@ -1,0 +1,6 @@
+---
+- name: Statred and Enabled docker
+  service: 
+    name: docker
+    state: started 
+    enabled: true 

@@ -1,0 +1,14 @@
+---
+centos_packages_docker:
+  - yum-utils 
+  - device-mapper-persistent-data 
+  - lvm2
+
+path_docker_repo: /etc/yum.repos.d/docker-ce.repo
+
+docker_packages:
+  - docker-ce 
+  - docker-ce-cli 
+  - containerd.io
+
+docker_key_for_repo: "https://download.docker.com/linux/debian/gpg"
