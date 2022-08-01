@@ -6,9 +6,6 @@ centos_packages_docker:
 
 path_docker_repo: /etc/yum.repos.d/docker-ce.repo
 
-docker_packages:
-  - docker-ce 
-  - docker-ce-cli 
-  - containerd.io
+docker_packages: "dnf install -y docker-ce docker-ce-cli containerd.io --allowerasing"
 
 docker_key_for_repo: "https://download.docker.com/linux/debian/gpg"

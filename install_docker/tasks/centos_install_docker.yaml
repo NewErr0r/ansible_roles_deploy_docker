@@ -9,10 +9,10 @@
     url: "{{ docker_repo }}"
     dest: "{{ path_docker_repo }}"
   
-- name: Install docker 
-  dnf: 
-    name: "{{ docker_packages }}"
-    state: latest
+- name: Install docker
+  shell:  |
+    {{ docker_packages }}
   notify:
-    - Statred and Enabled docker 
+    - Statred and Enabled docker
+
 
